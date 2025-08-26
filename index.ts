@@ -88,3 +88,25 @@ function updateQuantity(productId: string, quantity: number) : void {
         renderCart();
     }
 }
+
+//Event delegation for remove and quantity input events
+cartItemsContainer.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement;
+
+    if(target.classList.contains("remove")) {
+        const productId = target.getAttribute("data-id")!;
+        removeFromCart(productId);
+    }
+});
+
+cartItemsContainer.addEventListener("change", (event) => {
+    const target = event.target as HTMLInputElement;
+
+    if(target.classList.contains("quantity")){
+        const productId = target.getAttribute("data-id")!;
+        const quantity = parseInt(target.value);
+        if(quantity > 0) {
+            updateQuantity(productId, quantity);
+        }
+    }
+});
