@@ -34,3 +34,16 @@ function addToCart(productId: string, productName: string, productPrice: number)
     saveCartToLocalStorage();
     renderCart();
 }
+
+//attach event listener to add to cart buttons
+productList.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement;
+    if(target.classList.contains("add-to-cart")) {
+        const product = target.parentElement as HTMLElement;
+        const productId = product.getAttribute("data-id")!;
+        const productName = product.getAttribute("data-name")!;
+        const productPrice = parseFloat(product.getAttribute("data-price")!);
+
+        addToCart(productId, productName, productPrice);
+    }
+});
