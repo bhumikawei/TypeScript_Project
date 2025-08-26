@@ -65,3 +65,26 @@ function renderCart(): void {
 
     updateToTotalCost();
 }
+
+//update the local cost display
+function updateToTotalCost(): void {
+    const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    totalCostElement.innerText = `Total: $${total.toFixed(2)}`;
+}
+
+//remove an item from the cart
+function removeFromCart(productId: string): void {
+    cart = cart.filter(item => item.id !== productId);
+    saveCartToLocalStorage();
+    renderCart();
+}
+
+//update item quantity in the cart
+function updateQuantity(productId: string, quantity: number) : void {
+    const item = cart.find(item => item.id === productId);
+    if(item) {
+        item.quantity = quantity;
+        saveCartToLocalStorage();
+        renderCart();
+    }
+}
