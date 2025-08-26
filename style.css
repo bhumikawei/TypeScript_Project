@@ -1,0 +1,153 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+/* Section Styling */
+.section {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #007acc;
+}
+
+#product-list {
+    border-right: 2px solid #e0e0e0;
+}
+
+/* Product Item Styling */
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.product h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 0;
+    width: 30%;
+}
+
+.product p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 0;
+    width: 30%;
+}
+
+.add-to-cart, #confirm-purchase {
+    width: 30%;
+    background-color: #007acc;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover, #confirm-purchase:hover {
+    background-color: #005f99;
+}
+
+/* Cart Item Styling */
+#shopping-cart {
+    padding-left: 20px;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.cart-item p {
+    margin: 0;
+    width: 50%;
+}
+
+input.quantity {
+    width: 20%;    
+    height: 25px;
+    border-radius: 6px;
+    padding: 0 6px;
+}
+
+.cart-item button {
+    background-color: #f44336;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    width: 20%;
+    transition: background-color 0.3s;
+}
+
+.cart-item button:hover {
+    background-color: #d32f2f;
+}
+
+/* Cart Summary Styling */
+.cart-summary {
+    text-align: center;
+}
+
+#total-cost {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#checkout {
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#checkout:hover {
+    background-color: #388e3c;
+}
