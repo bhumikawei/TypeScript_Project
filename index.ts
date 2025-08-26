@@ -47,3 +47,21 @@ productList.addEventListener("click", (event) => {
         addToCart(productId, productName, productPrice);
     }
 });
+
+//Render the cart in the HTML
+function renderCart(): void {
+    cartItemsContainer.innerHTML = '';
+
+    cart.forEach(item => {
+        const cartItemElement = document.createElement("div");
+        cartItemElement.className = "cart-item";
+        cartItemElement.innerHTML = `
+        <p>${item.name} (x${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}</p>
+        <input type="number" class="quantity" data-id="${item.id}" value="${item.quantity}" min="1">
+        <button class="remove" data-id="${item.id}">Remove</button>
+        `;
+        cartItemsContainer.appendChild(cartItemElement);
+    });
+
+    updateToTotalCost();
+}
