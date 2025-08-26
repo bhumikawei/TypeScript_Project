@@ -110,3 +110,23 @@ cartItemsContainer.addEventListener("change", (event) => {
         }
     }
 });
+
+//save the cart to local storage
+function saveCartToLocalStorage(): void {
+    localStorage.setItem("shoppingCart", JSON.stringify(cart));
+}
+
+//load cart from loal storage if it exists
+function loadCartFromLocalStorage() : void {
+    const savedCart = localStorage.getItem("shoppingCart");
+    if(savedCart) {
+        cart = JSON.parse(savedCart);
+        renderCart();
+    }
+}
+
+//load the cart from local storage
+
+checkoutButton.addEventListener("click", () => {
+    window.location.href = "checkout.html";
+})
